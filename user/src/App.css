@@ -53,18 +53,18 @@ main {
   justify-content: center;
 }
 
-th {
+td {
   background-color: white;
   padding: 5px;
   border-radius: 2px;
   transition: box-shadow 0.3s ease;
 }
 
-th:hover {
+td:hover {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-thead > tr > th {
+thead > tr > td {
   background-color: rgb(55, 70, 167);
   color: white;
 }
