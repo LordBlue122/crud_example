@@ -34,11 +34,22 @@ main {
 
 .content_container {
   padding: 5vh;
-  width: 80vh;
+  width: 50vw;
   background-color: rgb(220, 220, 220);
   border: 1px solid transparent;
   border-radius: 5px;
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: rgb(55, 137, 167);
 }
 
 .btn_container {
@@ -48,14 +59,25 @@ main {
   margin-bottom: 5vh;
 }
 
+.form_container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5vh;
+  background-color: rgb(220, 220, 220);
+}
+
 .table_container {
   display: flex;
   justify-content: center;
 }
 
+table{
+  font-size: 1.2rem;
+}
+
 td {
   background-color: white;
-  padding: 5px;
+  padding: 10px;
   border-radius: 2px;
   transition: box-shadow 0.3s ease;
 }
@@ -67,4 +89,29 @@ td:hover {
 thead > tr > td {
   background-color: rgb(55, 70, 167);
   color: white;
+}
+
+.puntuacion {
+  font-weight: bold;
+  color: rgb(55, 137, 167);
+}
+
+.actions {
+  display: table-cell; 
+  text-align: center;
+  font-size: 2rem;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.actions_container {
+  display: flex;
+  justify-content: center;
+}
+
+.btn_action {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 2rem;
 }
