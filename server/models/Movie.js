@@ -7,7 +7,8 @@ const movieSchema = new mongoose.Schema({
     genre: String,
     duration: Number, // en minutos
     rating: { type: Number, min: 0, max: 10 },
-    synopsis: String
+    synopsis: String,
+    IMDbID: String
 }, { timestamps: true });
 
 module.exports = mongoose.model('Movie', movieSchema);

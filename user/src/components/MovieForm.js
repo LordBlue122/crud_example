@@ -12,6 +12,7 @@ export default function MovieForm({ form, handleChange, handleSubmit }) {
                 <h2>Duración (min):</h2><input name="duration" type="number" placeholder="Duración" value={form.duration} onChange={handleChange} />
                 <h2>Calificación:</h2><input name="rating" type="number" min="0" max="10" step="0.1" placeholder="Puntuación" value={form.rating} onChange={handleChange} />
                 <h2>Sinopsis:</h2><input name="synopsis" placeholder="Sinopsis" value={form.synopsis} onChange={handleChange} />
+                <h2>IMDbID:</h2><input name="IMDbID" placeholder="IMDbID" type="text" value={form.IMDbID} onChange={handleChange} />
                 <br></br>
                 <div className='btn_container'>
                     <button className="btn_submit" type="submit">Guardar</button>

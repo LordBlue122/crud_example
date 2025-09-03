@@ -1,20 +1,26 @@
 import './App.css';
 import React, { useEffect, useState } from 'react'
 import MovieForm from './components/MovieForm'; 
+import EditMovie from './components/EditMovie';
+import MovieDetails from './components/MovieDetails';
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 
-function App() {
-  const [peliculas, setPeliculas] = useState([]); // Definir el estado
-  const [ showForm, setShowForm ] = useState(false);
-  const [ form, setForm ] = useState({
+function MainPage() {
+  const [peliculas, setPeliculas] = useState([]);
+  const [showForm, setShowForm] = useState(false);
+  const [form, setForm] = useState({
     title: '',
     director: '',
     year: '',
     genre: '',
     duration: '',
     rating: '',
-    synopsis: ''
+    synopsis: '',
+    IMDbID: ''
   });
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch('http://localhost:4000/api/movies')
@@ -49,11 +55,23 @@ function App() {
         genre: '',
         duration: '',
         rating: '',
-        synopsis: ''
+        synopsis: '',
+        IMDbID: ''
       });
       setShowForm(false);
     } else {
       console.error('Error al agregar la película');
+    }
+  }
+
+  const hadleDalete = async (id) => {
+    const res = await fetch(`http://localhost:4000/api/movies/${id}`, {
+      method: 'DELETE'
+    });
+    if (res.ok) {
+      setPeliculas(peliculas.filter(movie => movie._id !== id));
+    } else {
+      console.error('Error al eliminar la película');
     }
   }
 
@@ -98,8 +116,9 @@ function App() {
                     <td className="puntuacion">{movie.rating}</td>
                     <td className='actions'>
                       <div className='actions_container'>
-                        <button className='btn_action'><i className="fa-solid fa-file-pen" style={{ color: '#2e95f5', marginRight: '10px', cursor: 'pointer' }}></i></button>
-                        <button className='btn_action'><i className="fa-solid fa-trash" style={{ color: '#df3a3a', cursor: 'pointer' }}></i></button>
+                        <button className='btn_action' onClick={() => navigate(`/edit/${movie._id}`)}><i className="fa-solid fa-file-pen" style={{ color: '#2e95f5', cursor: 'pointer' }}></i></button>
+                        <button className='btn_action' onClick={() => hadleDalete(movie._id)}><i className="fa-solid fa-trash" style={{ color: '#df3a3a', cursor: 'pointer' }}></i></button>
+                        <button className='btn_action' onClick={() => navigate(`/details/${movie._id}`)}><i className="fa-solid fa-square-plus" style={{color: '#3cd747', cursor:'pointer'}}></i></button>
                       </div>
                     </td>
                   </tr>
@@ -113,4 +132,12 @@ function App() {
   );
 }
 
-export default App;
+export default function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<MainPage />} />
+      <Route path="/edit/:id" element={<EditMovie />} />
+      <Route path="/details/:id" element={<MovieDetails />} />
+    </Routes>
+  );
+}

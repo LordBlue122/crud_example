@@ -2,6 +2,8 @@
 
 const express = require('express');
 const router = express.Router();
+const fetch = require('node-fetch');
+const OMDB_API_KEY = process.env.OMDB_API_KEY;
 const {createMovie, getMovies, getMovieById, updateMovie, deleteMovie} = require('../controllers/movieController');
 
 router.post('/', createMovie);
