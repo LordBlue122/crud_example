@@ -116,17 +116,17 @@ function MainPage() {
                     <td className="puntuacion">{movie.rating}</td>
                     <td className='actions'>
                       <div className='actions_container'>
-                        <button className='btn_action' onClick={() => navigate(`/edit/${movie._id}`)}><i className="fa-solid fa-file-pen" style={{ color: '#2e95f5', cursor: 'pointer' }}></i></button>
-                        <button className='btn_action' onClick={() => hadleDalete(movie._id)}><i className="fa-solid fa-trash" style={{ color: '#df3a3a', cursor: 'pointer' }}></i></button>
-                        <button className='btn_action' onClick={() => navigate(`/details/${movie._id}`)}><i className="fa-solid fa-square-plus" style={{color: '#3cd747', cursor:'pointer'}}></i></button>
+                        <button className='btn_action' onClick={() => navigate(`/edit/${movie._id}`)}><i className="fa-solid fa-file-pen" style={{ color: '#76bbe5ff', cursor: 'pointer' }}></i></button>
+                        <button className='btn_action' onClick={() => hadleDalete(movie._id)}><i className="fa-solid fa-trash" style={{ color: '#e37eb2ff', cursor: 'pointer' }}></i></button>
+                        <button className='btn_action' onClick={() => navigate(`/details/${movie._id}`)}><i className="fa-solid fa-square-plus" style={{color: '#7998d6ff', cursor:'pointer'}}></i></button>
                       </div>
                     </td>
-                  </tr>
+                  </tr>     
                 ))}
               </tbody>
             </table>
           </div>
-        </div>
+        </div>    
       </main>
     </div>
   );

@@ -44,7 +44,6 @@ export default function EditMovie() {
                 <div className="title_container">
                     <h2>Editar Datos</h2>
                 </div>
-                <hr></hr>
                 <div className="form_container">
                     <form className="form_edit" onSubmit={handleSubmit}>
                         <h3>Titulo</h3>

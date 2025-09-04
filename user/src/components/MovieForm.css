@@ -1,5 +1,5 @@
 .container {
-    background-color: rgb(220, 220, 220);
+    background-color: rgb(234, 106, 106);
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -8,7 +8,7 @@
     padding-bottom: 10vh;
     border: 1px solid transparent;
     border-radius: 10px;
-    background-color: rgb(237, 237, 237);
+    background-color: rgb(245, 242, 250);
     box-shadow: rgb(237, 237, 237) 0px 4px 12px;
     height: 100vh;
 }
@@ -26,7 +26,7 @@ form {
 
 input {
     padding: 8px;
-    border: 1px solid #ccc;
+    border: 1px solid rgb(240, 237, 245);
     border-radius: 4px;
     width: 100%;
     box-sizing: border-box;
@@ -36,11 +36,11 @@ input {
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    color: white;
+    color: rgb(255, 255, 255);
     cursor: pointer;
     font-size: 1rem;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    background-color: rgb(55, 137, 167);
+    background-color: rgb(112, 123, 220);
 }
 
 .btn_container {
