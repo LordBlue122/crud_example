@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "install:all": "npm --prefix server install && npm --prefix user install",
+    "install:all": "npm install && npm --prefix server install && npm --prefix user install",
     "start": "concurrently \"npm run server\" \"npm run client\"",
     "server": "cd server && npm start",
     "client": "cd user && npm start"
@@ -21,7 +21,8 @@
   "homepage": "https://github.com/LordBlue122/crud_example#readme",
   "description": "",
   "dependencies": {
-    "mongodb": "^6.19.0"
+    "mongodb": "^6.19.0",
+    "concurrently": "^9.2.1"
   },
   "devDependencies": {
     "concurrently": "^9.2.1"
