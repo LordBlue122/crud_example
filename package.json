@@ -2,11 +2,10 @@
   "name": "crud_example",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {
+"scripts": {
     "install:all": "npm install && npm --prefix server install && npm --prefix user install",
-    "start": "concurrently \"npm run server\" \"npm run client\"",
-    "server": "cd server && npm start",
-    "client": "cd user && npm start"
+    "build:client": "cd user && npm install && npm run build",
+    "start": "cd server && npm start"
   },
   "repository": {
     "type": "git",
