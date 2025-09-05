@@ -14,8 +14,6 @@ app.use('/api/omdb', omdbRoutes);
 
 const path = require('path');
 
-const path = require('path');
-
 // Servir archivos estáticos del frontend
 app.use(express.static(path.join(__dirname, '../user/build')));
 
@@ -23,6 +21,5 @@ app.use(express.static(path.join(__dirname, '../user/build')));
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '../user/build/index.html'));
 });
-
 
 module.exports = app;
