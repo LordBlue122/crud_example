@@ -18,7 +18,7 @@ const path = require('path');
 app.use(express.static(path.join(__dirname, '../user/build')));
 
 // Capturar cualquier ruta no manejada por el backend y devolver el index.html
-app.get('/:any(.*)', (req, res) => {
+app.get('/*splat', (req, res) => {
     res.sendFile(path.join(__dirname, '../user/build/index.html'));
 });
 
