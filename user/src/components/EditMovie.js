@@ -19,7 +19,16 @@ export default function EditMovie() {
     useEffect(() => {
         fetch(`http://localhost:4000/api/movies/${id}`)
             .then(res => res.json())
-            .then(data => setForm(data));
+            .then(data => setForm({
+                title: data.title || '',
+                director: data.director || '',
+                year: data.year || '',
+                genre: data.genre || '',
+                duration: data.duration || '',
+                rating: data.rating || '',
+                synopsis: data.synopsis || '',
+                IMDbID: data.IMDbID || ''
+            }));
     }, [id]);
 
     const handleChange = e => {

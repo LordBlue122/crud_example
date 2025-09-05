@@ -30,14 +30,14 @@
     justify-content: center;
     max-width: 600px;
     padding: 1rem;
-    background-color: #f4f8fc; 
+    background-color: rgb(240, 237, 249); 
     border-radius: 8px;
     box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.05);
 }
 
 .details_title_container h2 {
     font-size: 2rem;
-    color: #0077cc;
+    color: rgb(78, 78, 174);
     margin-bottom: 1rem;
 }
 
@@ -52,11 +52,11 @@
 }
 
 .details_content_container p strong {
-    color: #0077cc; 
+    color: rgb(78, 78, 174); 
 }
 
 .details_sinopsis_container {
-    background-color: #eef6fb;
+    background-color: rgb(240, 237, 249);
     padding: 1.5rem 2vw;
     margin: 2rem auto;
     font-size: 17px;
@@ -75,6 +75,5 @@
 
 .back_btn { 
     width: 100%; 
-    background-color: #0077cc; 
     border-radius: 0px; 
 }
