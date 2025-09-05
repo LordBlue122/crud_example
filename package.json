@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-  "install:all": "npm --prefix server install && npm --prefix user install"
+    "install:all": "npm --prefix server install && npm --prefix user install"
   },
   "repository": {
     "type": "git",
@@ -16,5 +16,8 @@
     "url": "https://github.com/LordBlue122/crud_example/issues"
   },
   "homepage": "https://github.com/LordBlue122/crud_example#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "mongodb": "^6.19.0"
+  }
 }
