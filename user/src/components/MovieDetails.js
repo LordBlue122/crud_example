@@ -10,7 +10,7 @@ export default function MovieDetails() {
 
     // 1. Obtener datos de la película
     useEffect(() => {
-        fetch(`http://localhost:4000/api/movies/${id}`)
+        fetch(`/api/movies/${id}`)
             .then(res => res.json())
             .then(data => setMovie(data))
             .catch(err => console.error('Error al obtener película:', err));
@@ -19,7 +19,7 @@ export default function MovieDetails() {
     // 2. Obtener imagen desde OMDb usando IMDbID
     useEffect(() => {
         if (movie?.IMDbID) {
-            fetch(`http://localhost:4000/api/omdb/image?IMDbID=${movie.IMDbID}`)
+            fetch(`/api/omdb/image?IMDbID=${movie.IMDbID}`)
                 .then(res => res.json())
                 .then(data => setPoster(data.poster))
                 .catch(err => console.error('Error al obtener imagen:', err));
