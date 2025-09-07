@@ -23,7 +23,7 @@ function MainPage() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch('/api/movies')
+    fetch('http://localhost:4000/api/movies')
       .then(response => response.json())
       .then(data => setPeliculas(data))
       .catch(error => console.error('Error fetching data:', error));
@@ -38,7 +38,7 @@ function MainPage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const res = await fetch('/api/movies', {
+    const res = await fetch('http://localhost:4000/api/movies', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -67,7 +67,7 @@ function MainPage() {
   /*fetch('http://localhost:4000/api/movies') por fetch(/api/movie)*/
 
   const hadleDalete = async (id) => {
-    const res = await fetch(`/api/movies/${id}`, {
+    const res = await fetch(`http://localhost:4000/api/movies/${id}`, {
       method: 'DELETE'
     });
     if (res.ok) {

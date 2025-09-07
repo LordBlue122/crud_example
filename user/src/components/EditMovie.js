@@ -37,7 +37,7 @@ export default function EditMovie() {
 
     const handleSubmit = async e => {
         e.preventDefault();
-        const res = await fetch(`/api/movies/${id}`, {
+        const res = await fetch(`http://localhost:4000/api/movies/${id}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(form)
