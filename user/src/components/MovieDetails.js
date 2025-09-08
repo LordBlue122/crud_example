@@ -21,7 +21,7 @@ export default function MovieDetails() {
     const placeholderURL = 'https://th.bing.com/th/id/R.3e77a1db6bb25f0feb27c95e05a7bc57?rik=07AQ3YRhkD3z8A&pid=ImgRaw&r=0';
 
     if (movie?.IMDbID) {
-        fetch(`http://localhost:4000/api/omdb/image?IMDbID=${movie.IMDbID}`)
+        fetch(`/api/omdb/image?IMDbID=${movie.IMDbID}`)
             .then(res => res.json())
             .then(data => {
                 if (data.poster && data.poster !== 'N/A') {
